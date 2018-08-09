@@ -6,7 +6,7 @@
 /*   By: thill <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 14:34:30 by thill             #+#    #+#             */
-/*   Updated: 2018/08/08 23:26:17 by thill            ###   ########.fr       */
+/*   Updated: 2018/08/09 16:12:01 by thill            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ char	**ft_strsplit(const char *s, char c)
 
 	i = 0;
 	k = 0;
-	t = (char **)malloc(sizeof(char *) * (ft_wcount(s, c) + 1));
-	if (s == NULL || t == NULL)
+	if (!s || !(t = (char **)malloc(sizeof(char *) * (ft_wcount(s, c) + 1))))
 		return (NULL);
 	while (i < ft_wcount(s, c))
 	{
